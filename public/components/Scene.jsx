@@ -78,7 +78,7 @@ export default function Scene() {
         <p className='text-2xl lg:text-4xl'>The all new</p>
         <img className='w-40 lg:w-fit' src='./m3logo.png'></img>
         </div>
-        <h1 style={{height:'300px',overflow:'hidden'}}>BMW M3 GTR
+        <h1 style={{overflow:'hidden'}}>BMW M3 GTR
 REIMAGINED</h1>
 <button style={{padding:"4px 48px"}} className=" rounded-3xl h-fit w-fit  border-2 border-slate-100">Read More</button>
 </div></div>
@@ -148,7 +148,7 @@ it belongs</p>
     <section style={{height:'100vh'}} className='flex justify-end items-end'>
     <div  className='container flex flex-col h-fit mx-auto px-8 lg:px-24 py-44'>
         <div className='flex flex-col lg:flex-row  items-start gap-10'>
-          <div style={{width:'55%'}} className='flex flex-col gap-4 '>
+          <div style={{width:'65%'}} className='flex flex-col gap-4 '>
           <motion.h2
           ref={thirdRef}
            initial={{ opacity: 0 }}
@@ -170,9 +170,9 @@ it belongs</p>
         <div className='flex flex-col gap-10'>
         <div className='flex flex-col lg:flex-row gap-8 w-full justify-between'>
           <div className='flex flex-col gap-4'>
-        <span className='text-5xl' style={{fontFamily:'Tungsten',overflow:'hidden'}}>QUICK LINKS</span>
+        <span className='text-5xl quicklinks' style={{overflow:'hidden'}} >QUICK LINKS</span>
 
-          <ul className='flex flex-col gap-2' style={{fontFamily:'ClashGrotesk-Light'}} >
+          <ul className='flex flex-col gap-2'  >
             <li style={{overflow:'hidden'}}>Home</li>
             <li style={{overflow:'hidden'}}>BMW in your country</li>
             <li style={{overflow:'hidden'}}>Contact</li>

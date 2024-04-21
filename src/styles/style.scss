@@ -35,14 +35,14 @@ font-family:'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif
   height: fit-content!important;
 
   @media (min-width: 350px) {
-    font-size: 96px!important;
-    line-height: 72px;
+    font-size: 76px!important;
+    line-height: 60px;
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-    font-size: 120px!important;
-    line-height: 80px;
+    font-size: 76px!important;
+    line-height: 60px;
 }
 
 // Medium devices (tablets, 768px and up)
@@ -76,6 +76,7 @@ font-family:'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif
         line-height: 96px;
         overflow: hidden;
         height: fit;
+        width: auto!important;
         
         @media (min-width: 350px) {
             font-size: 80px!important;
@@ -118,6 +119,11 @@ font-family:'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif
     }
     button{
         font-family: 'ClashGrotesk-Light'!important;
+
+    }
+
+    li{
+                font-family: 'ClashGrotesk-Light'!important;
 
     }
 
@@ -191,4 +197,9 @@ font-family:'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif
             height: 360px;
             width: 640px;
         }
+    }
+
+    .quicklinks{
+        font-family: "Tungsten-Bold";
+
     }

@@ -1,0 +1,194 @@
+
+main{
+    position: relative;
+    z-index: 2;
+}
+
+*{
+    margin: 0;
+    padding:0 ;
+    overflow-x: hidden;
+}
+
+
+    h1{
+font-family:'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif
+    }
+
+    .head{
+        position: fixed;
+        height: 60px;
+        width: 100%;
+        z-index: 3;
+        background-color: #1D1C1C;
+        font-family: 'ClashGrotesk-Regular';
+
+    }
+
+    h1{
+        font-family: "Tungsten-Bold";
+        font-size: 180px!important;
+        line-height: 140px;
+        background: -webkit-linear-gradient(#eee, #33333300);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  height: fit-content!important;
+
+  @media (min-width: 350px) {
+    font-size: 96px!important;
+    line-height: 72px;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    font-size: 120px!important;
+    line-height: 80px;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    font-size: 180px!important;
+        line-height: 140px;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    font-size: 180px!important;
+        line-height: 140px;
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    font-size: 180px!important;
+    line-height: 140px;
+}
+
+// XX-Large devices (larger desktops, 1360px and up)
+@media (min-width: 1360px) {
+    font-size: 180px!important;
+        line-height: 140px;
+}
+    }
+
+    h2{
+        font-family: "Tungsten-Bold";
+        font-size: 120px!important;
+        line-height: 96px;
+        overflow: hidden;
+        height: fit;
+        
+        @media (min-width: 350px) {
+            font-size: 80px!important;
+        line-height: 60px;
+        }
+    
+        // Small devices (landscape phones, 576px and up)
+        @media (min-width: 576px) {
+            font-size: 120px!important;
+        line-height: 96px;
+        }
+    
+        // Medium devices (tablets, 768px and up)
+        @media (min-width: 768px) {
+            font-size: 120px!important;
+        line-height: 96px;
+        }
+    
+        // Large devices (desktops, 992px and up)
+        @media (min-width: 992px) {
+            font-size: 120px!important;
+            line-height: 96px;
+        }
+    
+        // X-Large devices (large desktops, 1200px and up)
+        @media (min-width: 1200px) {
+            font-size: 120px!important;
+        line-height: 96px;
+        }
+    
+        // XX-Large devices (larger desktops, 1360px and up)
+        @media (min-width: 1360px) {
+            font-size: 120px!important;
+            line-height: 96px;
+        }
+    }
+    p{
+        font-family: 'ClashGrotesk-Light';
+        font-size: 24px;
+    }
+    button{
+        font-family: 'ClashGrotesk-Light'!important;
+
+    }
+
+    @font-face{
+        font-family: "Tungsten-Bold";
+        src: url("../../public/fonts/561f38b1f4570de0fb8a39d691ab058c.eot");
+        src: url("../../public/fonts/561f38b1f4570de0fb8a39d691ab058c.eot?#iefix")format("embedded-opentype"),
+            url("../../public/fonts/561f38b1f4570de0fb8a39d691ab058c.woff")format("woff"),
+            url("../../public/fonts/561f38b1f4570de0fb8a39d691ab058c.woff2")format("woff2"),
+            url("../../public/fonts/561f38b1f4570de0fb8a39d691ab058c.ttf")format("truetype"),
+            url("../../public/fonts/561f38b1f4570de0fb8a39d691ab058c.svg#Tungsten-Bold")format("svg");
+        font-weight:normal;
+        font-style:normal;
+        font-display:swap;
+    }
+
+    @font-face {
+        font-family: 'ClashGrotesk-Light';
+        src: url('../../public/fonts/clash/fonts/ClashGrotesk-Light.woff2') format('woff2'),
+             url('../../public/fonts/clash/fonts/ClashGrotesk-Light.woff') format('woff'),
+             url('../../public/fonts/clash/fonts/ClashGrotesk-Light.ttf') format('truetype');
+             font-weight: 300;
+             font-display: swap;
+             font-style: normal;
+      }
+      
+      
+      @font-face {
+        font-family: 'ClashGrotesk-Regular';
+        src: url('../../public/fonts/clash/fonts/ClashGrotesk-Regular.woff2') format('woff2'),
+             url('../../public/fonts/clash/fonts/ClashGrotesk-Regular.woff') format('woff'),
+             url('../../public/fonts/clash/fonts/ClashGrotesk-Regular.ttf') format('truetype');
+             font-weight: 360;
+             font-display: swap;
+             font-style: normal;
+      }
+
+      .smallBMW {
+        
+        @media (min-width: 350px) {
+            height: 160px;
+            width: 100%;
+        }
+    
+        // Small devices (landscape phones, 576px and up)
+        @media (min-width: 576px) {
+            height: 180px;
+            width: 100%;
+        }
+    
+        // Medium devices (tablets, 768px and up)
+        @media (min-width: 768px) {
+            height: 280px;
+            width: 100%;
+        }
+    
+        // Large devices (desktops, 992px and up)
+        @media (min-width: 992px) {
+            height: 360px;
+            width: 640px;
+        }
+    
+        // X-Large devices (large desktops, 1200px and up)
+        @media (min-width: 1200px) {
+            height: 360px;
+            width: 640px;
+        }
+    
+        // XX-Large devices (larger desktops, 1360px and up)
+        @media (min-width: 1360px) {
+            height: 360px;
+            width: 640px;
+        }
+    }

@@ -1,7 +1,7 @@
 'use client'
 
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef,useState } from 'react';
 import { Canvas, useFrame, useThree } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Environment } from '@react-three/drei';
@@ -20,7 +20,7 @@ import { useInView } from "react-intersection-observer";
 export default function Scene() {
  // Check window width
  const windowWidth = window.innerWidth;
-
+const [pgnumber,setPgNumber]=useState(4.4);
  // Define position based on window size
  let positionX = 12;
  let positionY = -1;
@@ -29,6 +29,18 @@ export default function Scene() {
    positionX = 8;
    positionY = -4;
  }
+
+ useEffect(()=>{
+  if (windowWidth < 600) {
+    setPgNumber(4.55)
+  }else{
+    setPgNumber(4.4)
+
+  }
+ })
+
+
+
 
   const cameraRef = useRef();
   const { ref: firstRef, inView: firstInView } = useInView({
@@ -62,12 +74,12 @@ export default function Scene() {
       <pointLight castShadow receiveShadow color={"grey"} intensity={800} position={[-4, 10, 0]} />
      
       
-      <ScrollControls  pages={4.45} damping={0.2}>
+      <ScrollControls  pages={pgnumber} damping={0.2}>
         
   {/* Canvas contents in here will *not* scroll, but receive useScroll! */}
 <Cloud position={[2,0,-15]} opacity={0.2} speed={0.3}/>
 
-  <Scroll html style={{width:'100%', height:'auto'}}>
+  <Scroll html style={{width:'100%'}}>
     {/* DOM contents in here will scroll along */}
     
     
@@ -165,9 +177,9 @@ it belongs</p>
       </div>
 
     </section>
-    <section style={{height:'45vh',position:'relative'}}>
-      <div style={{background:'#161515', width:'100%',height:'100%',position:'absolute',bottom:0}} className='container flex flex-col h-fit mx-auto px-8 lg:px-24 py-8'>
-        <div className='flex flex-col gap-10'>
+    <section style={{width:"100%",bottom:'0%',zIndex:1}}>
+      <div style={{background:'#161515', width:'100%',height:'100%',position:'relative',bottom:0}} className='container flex flex-col h-fit mx-auto px-8 lg:px-24 py-8 '>
+        <div className='flex flex-col gap-10 justify-between h-full'>
         <div className='flex flex-col lg:flex-row gap-8 w-full justify-between'>
           <div className='flex flex-col gap-4'>
         <span className='text-5xl quicklinks' style={{overflow:'hidden'}} >QUICK LINKS</span>

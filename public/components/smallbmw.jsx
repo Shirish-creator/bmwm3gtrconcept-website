@@ -47,4 +47,4 @@ useFrame(()=>{
   )
 }
 
-useGLTF.preload('/bmwsmall.glb')
+useGLTF.preload('../models/bmwsmall.glb')

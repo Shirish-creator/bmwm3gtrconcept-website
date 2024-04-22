@@ -20,7 +20,7 @@ import { useInView } from "react-intersection-observer";
 export default function Scene() {
  // Check window width
  const windowWidth = window.innerWidth;
-const [pgnumber,setPgNumber]=useState(6.5);
+const [pgnumber,setPgNumber]=useState(6.6);
  // Define position based on window size
  let positionX = 12;
  let positionY = -1;
@@ -84,13 +84,13 @@ const [pgnumber,setPgNumber]=useState(6.5);
     
     
     <section style={{display:'flex', justifyContent:'end' ,height:'100vh'}} >
-      <div className='flex container px-10 py-8 mx-auto items-end h-100 justify-end'> <div className='flex flex-col gap-8'  style={{width:'700px', overflow:"hidden"}}>
+      <div className='flex container px-10 py-8 mx-auto items-end h-100 justify-end'> <div className='flex flex-col gap-8'  style={{width:'700px'}}>
         
         <div className='flex flex-col gap-4 lg:flex-row justify-between'>
         <p className='text-2xl lg:text-4xl'>The all new</p>
         <img className='w-40 lg:w-fit' src='./m3logo.png'></img>
         </div>
-        <h1 style={{overflow:'hidden'}}>BMW M3 GTR
+        <h1  >BMW M3 GTR
 REIMAGINED</h1>
 <button style={{padding:"4px 48px"}} className=" rounded-3xl h-fit w-fit  border-2 border-slate-100">Read More</button>
 </div></div>
@@ -157,8 +157,8 @@ it belongs</p>
       
 
     </section>
-    <section style={{height:'100vh'}} className='flex justify-end items-end'>
-    <div  className='container flex flex-col h-fit mx-auto px-8 lg:px-24 py-44'>
+    <section style={{height:'100vh'}} className='flex justify-end items-center'>
+    <div  className='container flex flex-col h-fit mx-auto px-8 lg:px-24 '>
         <div className='flex flex-col lg:flex-row  items-start gap-10'>
           <div style={{width:'65%'}} className='flex flex-col gap-4 '>
           <motion.h2
@@ -183,24 +183,25 @@ it belongs</p>
       </div>
       
       </section>
-      <section style={{height:'50vh',width:"100%",bottom:'0%',zIndex:1}}>
+      <section style={{height:'60vh',width:"100%",bottom:'0%',zIndex:1}}>
       <div style={{background:'#161515', width:'100%',height:'100%',position:'relative',bottom:0}} className='container flex flex-col h-fit mx-auto px-8 lg:px-24 py-8 '>
         <div className='flex flex-col gap-10 justify-between h-full'>
         <div className='flex flex-col lg:flex-row gap-8 w-full justify-between'>
           <div className='flex flex-col gap-4'>
-        <span className='text-5xl quicklinks' style={{overflow:'hidden'}} >QUICK LINKS</span>
+        <span className='text-5xl quicklinks'   >QUICK LINKS</span>
 
           <ul className='flex flex-col gap-2'  >
-            <li style={{overflow:'hidden'}}>Home</li>
-            <li style={{overflow:'hidden'}}>BMW in your country</li>
-            <li style={{overflow:'hidden'}}>Contact</li>
-            <li style={{overflow:'hidden'}}>Cookies</li>
+            <li  >Home</li>
+            <li  >BMW in your country</li>
+            <li  >Contact</li>
+            <li  >Cookies</li>
 
           </ul>
           </div>
           <img className='h-fit  w-full lg:w-fit' src="/images/biglogo.png" alt="logo" />
         </div>
-        <div style={{fontSize:'18px',overflow:'hidden'}}><p style={{fontSize:'18px',overflow:'hidden'}}>This is just  a concept website. The BMW logo is trademark of BMW motors.</p></div>
+
+        <div style={{fontSize:'18px', }}><p style={{fontSize:'18px', }}>This is just  a concept website. The BMW logo is trademark of BMW motors.</p></div>
         </div>
       </div>
       

@@ -7,7 +7,6 @@ main{
 *{
     margin: 0;
     padding:0 ;
-    overflow-x: hidden;
 }
 
 
@@ -28,89 +27,77 @@ font-family:'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif
     h1{
         font-family: "Tungsten-Bold";
         font-size: 180px!important;
-        line-height: 140px;
         background: -webkit-linear-gradient(#eee, #33333300);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   height: fit-content!important;
+  line-height: 80%   ;
 
   @media (min-width: 350px) {
-    font-size: 76px!important;
-    line-height: 60px;
+    font-size: 106px!important;
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-    font-size: 76px!important;
-    line-height: 60px;
+    font-size: 106px!important;
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
     font-size: 180px!important;
-        line-height: 140px;
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
     font-size: 180px!important;
-        line-height: 140px;
 }
 
 // X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
     font-size: 180px!important;
-    line-height: 140px;
 }
 
 // XX-Large devices (larger desktops, 1360px and up)
 @media (min-width: 1360px) {
     font-size: 180px!important;
-        line-height: 140px;
 }
     }
 
     h2{
         font-family: "Tungsten-Bold";
         font-size: 120px!important;
-        line-height: 96px;
-        overflow: hidden;
         height: fit;
         width: auto!important;
+        line-height: 80%   ;
+
         
         @media (min-width: 350px) {
             font-size: 80px!important;
-        line-height: 60px;
         }
     
         // Small devices (landscape phones, 576px and up)
         @media (min-width: 576px) {
             font-size: 120px!important;
-        line-height: 96px;
         }
     
         // Medium devices (tablets, 768px and up)
         @media (min-width: 768px) {
             font-size: 120px!important;
-        line-height: 96px;
         }
     
         // Large devices (desktops, 992px and up)
         @media (min-width: 992px) {
             font-size: 120px!important;
-            line-height: 96px;
         }
     
         // X-Large devices (large desktops, 1200px and up)
         @media (min-width: 1200px) {
             font-size: 120px!important;
-        line-height: 96px;
         }
     
         // XX-Large devices (larger desktops, 1360px and up)
         @media (min-width: 1360px) {
             font-size: 120px!important;
-            line-height: 96px;
         }
     }
     p{

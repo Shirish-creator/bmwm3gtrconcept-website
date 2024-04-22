@@ -20,7 +20,7 @@ import { useInView } from "react-intersection-observer";
 export default function Scene() {
  // Check window width
  const windowWidth = window.innerWidth;
-const [pgnumber,setPgNumber]=useState(4.4);
+const [pgnumber,setPgNumber]=useState(6.5);
  // Define position based on window size
  let positionX = 12;
  let positionY = -1;
@@ -30,14 +30,14 @@ const [pgnumber,setPgNumber]=useState(4.4);
    positionY = -4;
  }
 
- useEffect(()=>{
-  if (windowWidth < 600) {
-    setPgNumber(4.55)
-  }else{
-    setPgNumber(4.4)
+//  useEffect(()=>{
+//   if (windowWidth < 600) {
+//     setPgNumber(4.55)
+//   }else{
+//     setPgNumber(4.4)
 
-  }
- })
+//   }
+//  })
 
 
 
@@ -177,7 +177,13 @@ it belongs</p>
       </div>
 
     </section>
-    <section style={{width:"100%",bottom:'0%',zIndex:1}}>
+    <section style={{height:'200vh',width:"100%",bottom:'0%',zIndex:0}}>
+      <div style={{background:'white', width:'100%',height:'100%',position:'relative',bottom:0}} className='container flex flex-col h-fit mx-auto px-8 lg:px-24 py-8 '>
+        
+      </div>
+      
+      </section>
+      <section style={{height:'50vh',width:"100%",bottom:'0%',zIndex:1}}>
       <div style={{background:'#161515', width:'100%',height:'100%',position:'relative',bottom:0}} className='container flex flex-col h-fit mx-auto px-8 lg:px-24 py-8 '>
         <div className='flex flex-col gap-10 justify-between h-full'>
         <div className='flex flex-col lg:flex-row gap-8 w-full justify-between'>

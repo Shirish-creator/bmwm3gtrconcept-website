@@ -5,6 +5,8 @@ import { useThree } from 'react-three-fiber'
 import { useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { useFrame } from 'react-three-fiber';
+import { Html } from 'next/document';
+
 export function Car(props) {
   const { nodes, materials } = useGLTF('../models/bmw.glb')
   const { camera } = useThree();
@@ -22,21 +24,26 @@ export function Car(props) {
   });
 
   useLayoutEffect(() => {
-    tl.current = gsap.timeline({ defaults: { duration: 2, ease: "power1.out" } })
-      .to(camera.position, { x: 12, y: -1, z: -4, duration: 10 }, 7) // Camera position change at t=0s
-      .to(camera.rotation, { x: 0, y: 1.5, z: 0, duration: 10 }, 7) // Camera position change at t=0s
+    tl.current = gsap.timeline({ defaults: { duration: 10, ease: "power1.out" } })
+      .to(camera.position, { x: 12, y: -1, z: -4, duration: 8 }, 10) // Camera position change at t=0s
+      .to(camera.rotation, { x: 0, y: 1.5, z: 0, duration: 8 }, 10) // Camera position change at t=0s
 
-      .to(camera.position, { x: 5, y: -1, z: -20, duration: 10 }, 30) // Camera position change at t=0s
-      .to(camera.rotation, { x: 0, y: 3, z: 0, duration: 10 }, 30) // Camera position change at t=0s
+      .to(camera.position, { x: 5, y: -1, z: -20, duration: 10 }, 20) // Camera position change at t=0s
+      .to(camera.rotation, { x: 0, y: 3, z: 0, duration: 10 }, 20) // Camera position change at t=0s
 
-      .to(camera.position, { x: 5, y: 20, z: -10, duration: 10 }, 52) // Camera position change at t=0s
-      .to(camera.rotation, { x: 1.5, y: 3.2, z: 0, duration: 10 },52) // Camera position change at t=0s
+      .to(camera.position, { x: 5, y: 20, z: -10, duration: 10 }, 40) // Camera position change at t=0s
+      .to(camera.rotation, { x: 1.5, y: 3.2, z: 0, duration: 10 },40) // Camera position change at t=0s
 
       
-      .to(camera.position, { x: 5, y: 20, z: -10, duration: 10 }, 60) // Camera position change at t=0s
-      .to(camera.rotation, { x: 1.5, y: 3.2, z: 0, duration: 10 },60) // Camera position change at t=0s
+      .to(camera.position, { x: 5, y: 20, z: -10, duration: 10 }, 65) // Camera position change at t=0s
+      .to(camera.rotation, { x: 1.5, y: 3.2, z: 0, duration: 10 },65) // Camera position change at t=0s
       
+      .to(camera.position, { x: 5, y: 20, z: -10, duration: 10 }, 75) // Camera position change at t=0s
+      .to(camera.rotation, { x: 1.5, y: 3.2, z: 0, duration: 10 },75) // Camera position change at t=0s
 
+      .to(camera.position, { x: 5, y: 20, z: -10, duration: 10 }, 95) // Camera position change at t=0s
+      .to(camera.rotation, { x: 1.5, y: 3.2, z: 0, duration: 10 },95) // Camera position change at t=0s
+      
 
   }, [camera.position, camera.rotation]);
 

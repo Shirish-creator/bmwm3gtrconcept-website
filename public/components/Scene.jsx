@@ -25,7 +25,7 @@ export default function Scene({handleScroll,scrollOffset}) {
   const grpref=useRef()
  // Check window width
  const windowWidth = window.innerWidth;
-const [pgnumber,setPgNumber]=useState(6.6);
+const [pgnumber,setPgNumber]=useState(6.8);
  // Define position based on window size
  let positionX = 12;
  let positionY = -1;
@@ -182,7 +182,7 @@ it belongs</p>
       </div>
 
     </section>
-    <section className='relative' style={{background:'#252C46',height:'140vh',width:"100%",bottom:'0%',zIndex:0}}>
+    <section className='relative' style={{background:'#252C46',height:'160vh',width:"100%",bottom:'0%',zIndex:0}}>
         <img src='/images/enginewireframe.png' alt="wireframe engine" className='absolute w-120 lg:w-3/5 right-0'></img>
       
       <div style={{ width:'100%',position:'relative',bottom:0}} className='container flex flex-col lg:flex-row h-fit  lg:justify-between mx-auto px-8 lg:px-24 py-8 gap-8 '>
@@ -199,7 +199,7 @@ it belongs</p>
       </div>
       </div>
       <div className='w-100 lg:w-3/5 mt-0 lg:mt-32  h-fit'>
-      <Canvas  shadows style={{height:'540px'}}
+      <Canvas  shadows style={{height:'500px'}}
       
       camera={{
         fov: 10,

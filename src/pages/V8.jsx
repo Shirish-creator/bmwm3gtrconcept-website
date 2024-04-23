@@ -42,7 +42,7 @@ export default function V8() {
 
       <section  >
         <div className="first flex flex-col items-center justify-center lg:justify-start mt-0 lg:mt-32" style={{height:'100vh'}}><h1 className="w-4/5 lg:w-2/5 text-center" >THE POWER OF V8</h1></div>
-        <div className="second-section " style={{height:'100vh',background:"white"}}><h2 >hello</h2></div>
+        <div className="second-section " style={{height:'100vh'}}><h2 >hello</h2></div>
         <div className="third-section" style={{height:'100vh'}}><h2 >hello</h2></div>
 
       </section>

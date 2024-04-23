@@ -33,9 +33,9 @@ useFrame(()=>{
 useLayoutEffect(()=>{
 
   tl.to(group.current.position,{
-    x:2,
+    x:0.2,
     y:0,
-    z:-5,
+    z:-7,
    scrollTrigger:{
     trigger:'.second-section',
     start:"top bottom",
@@ -45,9 +45,9 @@ useLayoutEffect(()=>{
    }
   })
   tl.to(group.current.rotation,{
-    x:0.2,
-    y:-1,
-    z:-0.03,
+    x:0,
+    y:-0.6,
+    z:0,
    scrollTrigger:{
     trigger:'.second-section',
     start:"top bottom",
@@ -58,9 +58,9 @@ useLayoutEffect(()=>{
   })
  
 tl.to(group.current.position,{
-    x:-6,
-    y:0,
-    z:-5,
+    x:-0.5,
+    y:-2.9,
+    z:1.8,
    scrollTrigger:{
     trigger:'.third-section',
     start:"top bottom",
@@ -70,9 +70,9 @@ tl.to(group.current.position,{
    }
   })
   tl.to(group.current.rotation,{
-    x:0.2,
-    y:1.5,
-    z:-0.03,
+    x:-1.35,
+    y:0.05,
+    z:0.2,
    scrollTrigger:{
     trigger:'.third-section',
     start:"top bottom",

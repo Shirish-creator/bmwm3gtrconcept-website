@@ -7,7 +7,7 @@ import gsap from 'gsap';
 import { useFrame } from 'react-three-fiber';
 import { Html } from 'next/document';
 
-export function Car(props) {
+export function Car({props,handleScroll}) {
   const { nodes, materials } = useGLTF('../models/bmw.glb')
   const { camera } = useThree();
   const data = useScroll();
@@ -20,7 +20,9 @@ export function Car(props) {
 
   useFrame((state, delta) => {
     tl.current.seek(data.offset*tl.current.duration());
-    // console.log(data.offset)
+
+    if(data.offset>=0.9){
+      handleScroll()    }
   });
 
   useLayoutEffect(() => {

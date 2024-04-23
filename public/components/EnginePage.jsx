@@ -24,14 +24,12 @@ gsap.registerPlugin(ScrollTrigger)
 export default function EngineScene() {
 
 const cameraRef=useRef()
-const [scrollY, setScrollY] = useState(0);
-const maxScrollHeight=2000;
-const percentage = Math.round((scrollY / maxScrollHeight) * 100);
+
 
 
   return (
     <>
-    <Canvas  shadows style={{ height: '100vh', zIndex: 1, position: 'fixed',top:0,pointerEvents:'none' }} camera={{
+    <Canvas   shadows style={{ height: '100%',width:'100%',position:'fixed', zIndex: 1, pointerEvents:'none' }} camera={{
         fov: 10,
         near: 0.5,
         far: 1000,
@@ -40,7 +38,7 @@ const percentage = Math.round((scrollY / maxScrollHeight) * 100);
          <EffectComposer
       depthBuffer={true}
       >
-        {/* <Bloom luminanceThreshold={1.4} luminanceSmoothing={2.9} height={100} /> */}
+        <Bloom luminanceThreshold={1.4} luminanceSmoothing={2.9} height={100} />
         <Noise premultiply />
         {/* <ChromaticAberration offset={[0.0020, 0.0016]} /> */}
       </EffectComposer>

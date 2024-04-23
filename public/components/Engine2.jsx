@@ -23,6 +23,8 @@ const { camera } = useThree();
 const tl=gsap.timeline();
 
 
+
+
 useFrame(()=>{
   if (windowWidth < 600) {
     setScale(0.5)
@@ -31,63 +33,82 @@ useFrame(()=>{
 
 // position={[-1,-2,0]}
 useLayoutEffect(()=>{
-
-  tl.to(group.current.position,{
-    x:0.2,
-    y:0,
-    z:-7,
-   scrollTrigger:{
-    trigger:'.second-section',
-    start:"top bottom",
-    end:"top top",
-    scrub:true,
-    immediateRender:false,
-   }
-  })
-  tl.to(group.current.rotation,{
-    x:0,
-    y:-0.6,
-    z:0,
-   scrollTrigger:{
-    trigger:'.second-section',
-    start:"top bottom",
-    end:"top top",
-    scrub:true,
-    immediateRender:false,
-   }
-  })
+  // position={[-1,-2.5,0]} rotation={[0.15,0.2,-0.03]}
  
-tl.to(group.current.position,{
-    x:-0.5,
-    y:-2.9,
-    z:1.8,
-   scrollTrigger:{
-    trigger:'.third-section',
-    start:"top bottom",
-    end:"top top",
-    scrub:true,
-    immediateRender:false,
-   }
-  })
-  tl.to(group.current.rotation,{
-    x:-1.35,
-    y:0.05,
-    z:0.2,
-   scrollTrigger:{
-    trigger:'.third-section',
-    start:"top bottom",
-    end:"top top",
-    scrub:true,
-    immediateRender:false,
-   }
-  })
 
-})
+    tl.to(group.current.position,{
+      x:0.2,
+      y:0,
+      z:-7,
+    scrollTrigger:{
+      trigger:'.second-section',
+      start:"top bottom",
+      end:" top top",
+      scrub:true,
+      immediateRender:false,
+      // markers:true,
 
+    }
+    })
+    tl.to(group.current.rotation,{
+      x:0,
+      y:-0.6,
+      z:0,
+    scrollTrigger:{
+      trigger:'.second-section',
+      start:"top bottom",
+      end:"top top",
+      scrub:true,
+      immediateRender:false,
+    }
+    })
+    tl.to(group.current.position,{
+      x:-8,
+      y:0,
+      z:-7,
+    scrollTrigger:{
+      trigger:'.third-section',
+      start:"top bottom",
+      end:" top top",
+      scrub:true,
+      immediateRender:false,
+      // markers:true,
+
+    }
+    })
+    tl.to(group.current.rotation,{
+      x:0,
+      y:1.4,
+      z:0,
+    scrollTrigger:{
+      trigger:'.third-section',
+      start:"top bottom",
+      end:"top top",
+      scrub:true,
+      immediateRender:false,
+    }
+    })
+
+    tl.to(group.current.position,{
+      x:-8,
+      y:-10,
+      z:-7,
+    scrollTrigger:{
+      trigger:'.forth-section',
+      start:"top bottom",
+      end:" top top",
+      scrub:true,
+      immediateRender:false,
+      // markers:true,
+
+    }
+    })
+     
+},[])
   
   return (
     <group ref={group} {...props} dispose={null} position={[-1,-2.5,0]} rotation={[0.15,0.2,-0.03]}>
-            <pointLight castShadow receiveShadow color={"grey"} intensity={1000} position={[4, 2, 5]} />
+            <pointLight castShadow receiveShadow color={"grey"} intensity={1000} position={[6, 2, 3]} />
 
       <group name="Scene">
         <group name="Sketchfab_model" scale={scale} rotation={[0, 0, 0]}>

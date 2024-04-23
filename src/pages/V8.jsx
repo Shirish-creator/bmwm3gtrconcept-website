@@ -8,10 +8,23 @@ import Script from 'next/script'
 import { useFrame } from "react-three-fiber";
 import EngineScene from "../../public/components/EnginePage";
 import { useLayoutEffect } from 'react';
+import { useInView } from 'framer-motion';
 
 
 export default function V8() {
+  const forthref=useRef()
+  const [isSectionInView, setIsSectionInView] = useState(false);
+  const isInView = useInView(forthref)
 
+  useEffect(() => {
+    if (isInView) {
+      console.log('Element is in view!');
+      setIsSectionInView(true)
+    }else{
+      setIsSectionInView(false)
+
+      }
+  });
 
   return (
     <>
@@ -40,12 +53,15 @@ export default function V8() {
       </header>
       <EngineScene/>
 
-      <section  >
+      <section  style={{position:'relative'}}>
+
         <div className="first flex flex-col items-center justify-center lg:justify-start mt-0 lg:mt-32" style={{height:'100vh'}}><h1 className="w-4/5 lg:w-2/5 text-center" >THE POWER OF V8</h1></div>
         <div className="second-section " style={{height:'100vh'}}><h2 >hello</h2></div>
         <div className="third-section" style={{height:'100vh'}}><h2 >hello</h2></div>
 
       </section>
+      <div ref={forthref} className="forth-section bg-white" style={{height:'100vh'}}><h2 >hello</h2></div>
+
 
     </>
   )

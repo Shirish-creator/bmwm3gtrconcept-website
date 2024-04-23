@@ -31,10 +31,11 @@ useFrame(()=>{
 
 // position={[-1,-2,0]}
 useLayoutEffect(()=>{
+
   tl.to(group.current.position,{
-    x:1,
+    x:2,
     y:0,
-    z:-3,
+    z:-5,
    scrollTrigger:{
     trigger:'.second-section',
     start:"top bottom",
@@ -45,7 +46,7 @@ useLayoutEffect(()=>{
   })
   tl.to(group.current.rotation,{
     x:0.2,
-    y:-1.2,
+    y:-1,
     z:-0.03,
    scrollTrigger:{
     trigger:'.second-section',
@@ -55,10 +56,11 @@ useLayoutEffect(()=>{
     immediateRender:false,
    }
   })
-  tl.to(group.current.position,{
-    x:-3,
+ 
+tl.to(group.current.position,{
+    x:-6,
     y:0,
-    z:-3,
+    z:-5,
    scrollTrigger:{
     trigger:'.third-section',
     start:"top bottom",
@@ -68,9 +70,9 @@ useLayoutEffect(()=>{
    }
   })
   tl.to(group.current.rotation,{
-    x:1.5,
-    y:0.01,
-    z:-0.65,
+    x:0.2,
+    y:1.5,
+    z:-0.03,
    scrollTrigger:{
     trigger:'.third-section',
     start:"top bottom",
@@ -80,12 +82,13 @@ useLayoutEffect(()=>{
    }
   })
 
-
 })
 
   
   return (
     <group ref={group} {...props} dispose={null} position={[-1,-2.5,0]} rotation={[0.15,0.2,-0.03]}>
+            <pointLight castShadow receiveShadow color={"grey"} intensity={1000} position={[4, 2, 5]} />
+
       <group name="Scene">
         <group name="Sketchfab_model" scale={scale} rotation={[0, 0, 0]}>
           <group name="root">

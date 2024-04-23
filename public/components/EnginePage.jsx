@@ -40,13 +40,12 @@ const percentage = Math.round((scrollY / maxScrollHeight) * 100);
          <EffectComposer
       depthBuffer={true}
       >
-        <Bloom luminanceThreshold={1.4} luminanceSmoothing={2.9} height={100} />
+        {/* <Bloom luminanceThreshold={1.4} luminanceSmoothing={2.9} height={100} /> */}
         <Noise premultiply />
-        <ChromaticAberration offset={[0.0020, 0.0016]} />
+        {/* <ChromaticAberration offset={[0.0020, 0.0016]} /> */}
       </EffectComposer>
 
       <PerspectiveCamera ref={cameraRef} makeDefault position={[0, 0, 5]} rotation={[0,0.2,0]} resolution={3000} />
-      <pointLight castShadow receiveShadow color={"grey"} intensity={2000} position={[-4, 10, 0]} />
      
      <Engine2/>
       </Canvas>

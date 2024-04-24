@@ -51,7 +51,7 @@ export default function V8() {
           </div>
         </div>
       </header>
-      <EngineScene/>
+      <EngineScene isInView={isInView}/>
 
       <section  style={{position:'relative'}}>
 
@@ -60,7 +60,10 @@ export default function V8() {
         <div className="third-section" style={{height:'100vh'}}><h2 >hello</h2></div>
 
       </section>
-      <div ref={forthref} className="forth-section bg-white" style={{height:'100vh'}}><h2 >hello</h2></div>
+      <div ref={forthref} className=" bg-white" style={{height:'100vh',paddingTop:'100px'}}>
+        <h2 className="forth-section" style={{marginTop:"100px",color:'black'}} >hello
+        </h2>
+        </div>
 
 
     </>

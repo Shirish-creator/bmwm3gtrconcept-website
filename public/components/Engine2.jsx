@@ -19,9 +19,10 @@ export function Engine2({props,percentage,scrollY}) {
   const { actions } = useAnimations(animations, group)
   const windowWidth = window.innerWidth;
 const [scale,setScale]=useState(0.7)
+
 const { camera } = useThree();
 const tl=gsap.timeline();
-
+const discref=useRef()
 
 
 
@@ -29,6 +30,8 @@ useFrame(()=>{
   if (windowWidth < 600) {
     setScale(0.5)
   }
+
+  discref.current.rotation.z+=0.1
 })
 
 // position={[-1,-2,0]}
@@ -36,74 +39,55 @@ useLayoutEffect(()=>{
   // position={[-1,-2.5,0]} rotation={[0.15,0.2,-0.03]}
  
 
-    tl.to(group.current.position,{
-      x:0.2,
-      y:0,
-      z:-7,
-    scrollTrigger:{
-      trigger:'.second-section',
-      start:"top bottom",
-      end:" top top",
-      scrub:true,
-      immediateRender:false,
-      // markers:true,
+    
 
-    }
-    })
-    tl.to(group.current.rotation,{
-      x:0,
-      y:-0.6,
-      z:0,
-    scrollTrigger:{
-      trigger:'.second-section',
-      start:"top bottom",
-      end:"top top",
-      scrub:true,
-      immediateRender:false,
-    }
-    })
-    tl.to(group.current.position,{
-      x:-8,
-      y:0,
-      z:-7,
-    scrollTrigger:{
-      trigger:'.third-section',
-      start:"top bottom",
-      end:" top top",
-      scrub:true,
-      immediateRender:false,
-      // markers:true,
+  tl
+  .to(group.current.position,{
+    x:1,
+    y:-0.5,
+    z:-2,
+  scrollTrigger:{
+    trigger:'.second-section',
+    start:"top bottom",
+    end:" top top",
+    scrub:true,
+    immediateRender:false,
+    // markers:true,
 
-    }
-    })
-    tl.to(group.current.rotation,{
-      x:0,
-      y:1.4,
-      z:0,
-    scrollTrigger:{
-      trigger:'.third-section',
-      start:"top bottom",
-      end:"top top",
-      scrub:true,
-      immediateRender:false,
-    }
-    })
+  }
+  })
+  .to(group.current.rotation,{
+    x:-0.2,
+    y:-0.9,
+    z:0,
+  scrollTrigger:{
+    trigger:'.second-section',
+    start:"top bottom",
+    end:"top top",
+    scrub:true,
+    immediateRender:false,
+  }
+  })
+  .to(group.current.position,{
+    x:10,
+    y:-0.5,
+    z:-2,
+  scrollTrigger:{
+    trigger:'.forth-section',
+    start:"top bottom",
+    end:" top top",
+    scrub:true,
+    immediateRender:false,
+    // markers:true,
 
-    tl.to(group.current.position,{
-      x:-8,
-      y:-10,
-      z:-7,
-    scrollTrigger:{
-      trigger:'.forth-section',
-      start:"top bottom",
-      end:" top top",
-      scrub:true,
-      immediateRender:false,
-      // markers:true,
+  }
+  })
 
-    }
-    })
-     
+  
+  
+  
+    
+  
 },[])
   
   return (
@@ -121,7 +105,7 @@ useLayoutEffect(()=>{
                 <mesh name="Object_73" geometry={nodes.Object_73.geometry} material={materials['Material.009']} position={[-3.225, 0.868, 0.569]} />
               </group>
               <group name="Circle001_31">
-                <mesh name="Object_69" geometry={nodes.Object_69.geometry} material={materials['Material.003']} position={[-0.149, -0.174, 3.447]} />
+                <mesh name="Object_69" ref={discref} geometry={nodes.Object_69.geometry} material={materials['Material.003']} position={[-0.149, -0.174, 3.447]} />
               </group>
               <group name="Cylinder003_0">
                 <mesh name="Object_4" geometry={nodes.Object_4.geometry} material={materials['Material.001']} position={[-0.167, -0.346, 0.257]} />

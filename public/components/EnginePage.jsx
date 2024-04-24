@@ -21,7 +21,7 @@ import { Plane } from '@react-three/drei';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger)
 
-export default function EngineScene() {
+export default function EngineScene({isInView}) {
 
 const cameraRef=useRef()
 
@@ -29,7 +29,7 @@ const cameraRef=useRef()
 
   return (
     <>
-    <Canvas   shadows style={{ height: '100%',width:'100%',position:'fixed', zIndex: 1, pointerEvents:'none' }} camera={{
+    <Canvas   shadows style={{ height: '100vh',width:'100%',position:'fixed',top:0, zIndex: 1, pointerEvents:'none' }} camera={{
         fov: 10,
         near: 0.5,
         far: 1000,

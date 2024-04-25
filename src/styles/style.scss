@@ -11,6 +11,7 @@ main{
 
 body{
     background-color: #141414;
+    overflow-x: hidden;
 }
     h1{
 font-family:'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif
@@ -69,7 +70,7 @@ font-family:'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif
         font-family: "Tungsten-Bold";
         font-size: 120px!important;
         height: fit;
-        width: auto!important;
+        width: auto;
         line-height: 80%   ;
 
         

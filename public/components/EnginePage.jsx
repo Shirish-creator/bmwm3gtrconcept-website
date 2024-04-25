@@ -19,29 +19,53 @@ import { useInView } from "react-intersection-observer";
 import { Engine2 } from './Engine2';
 import { Plane } from '@react-three/drei';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
 gsap.registerPlugin(ScrollTrigger)
 
 export default function EngineScene({isInView}) {
-
+const canvasref=useRef()
 const cameraRef=useRef()
+const tl=gsap.timeline();
 
+// gsap.to(canvasref, {
+//   opacity: 0,
+//   ease: 'none',
+//   scrollTrigger: {
+//     trigger: '.forth-section',
+//     start: 'top top',
+//     end: 'bottom top',
+//     scrub: true
+//   }
+// });
 
+// console.log(canvasref.current.style)
+useLayoutEffect(()=>{
+  tl
+  .to(canvasref.current.style,{
+    transform: "translateY(-100%)",
+  ease: "power1.in",
+  scrollTrigger:{
+    trigger:'.forth-section',
+    start:"top +=650",
+    end:" top top",
+    scrub:true,
+    immediateRender:false,
+    
+
+  }
+  },[])
+})
 
   return (
     <>
-    <Canvas   shadows style={{ height: '100vh',width:'100%',position:'fixed',top:0, zIndex: 1, pointerEvents:'none' }} camera={{
+    <Canvas ref={canvasref}  shadows style={{ height: '100vh',width:'100%',position:'fixed',top:0, zIndex: 1, pointerEvents:'none' }} camera={{
         fov: 10,
         near: 0.5,
         far: 1000,
         position: [0, 1, 22]
       }}>
-         <EffectComposer
-      depthBuffer={true}
-      >
-        <Bloom luminanceThreshold={1.4} luminanceSmoothing={2.9} height={100} />
-        <Noise premultiply />
-        {/* <ChromaticAberration offset={[0.0020, 0.0016]} /> */}
-      </EffectComposer>
+        
+        
 
       <PerspectiveCamera ref={cameraRef} makeDefault position={[0, 0, 5]} rotation={[0,0.2,0]} resolution={3000} />
      

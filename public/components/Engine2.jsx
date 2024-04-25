@@ -23,15 +23,25 @@ const [scale,setScale]=useState(0.7)
 const { camera } = useThree();
 const tl=gsap.timeline();
 const discref=useRef()
+const   roofref=useRef()
+const   baseref=useRef()
+const piperef=useRef()
+const sideref=useRef()
+const drillref=useRef()
 
+const redknobsref=useRef()
+
+const sidecoverref2=useRef()
 
 
 useFrame(()=>{
   if (windowWidth < 600) {
     setScale(0.5)
   }
-
+  
   discref.current.rotation.z+=0.1
+  drillref.current.rotation.z+=0.05
+
 })
 
 // position={[-1,-2,0]}
@@ -39,56 +49,163 @@ useLayoutEffect(()=>{
   // position={[-1,-2.5,0]} rotation={[0.15,0.2,-0.03]}
  
 
-    
-
   tl
   .to(group.current.position,{
     x:1,
-    y:-0.5,
-    z:-2,
+    y:-0.8,
+    z:-3,
   scrollTrigger:{
     trigger:'.second-section',
     start:"top bottom",
     end:" top top",
     scrub:true,
     immediateRender:false,
-    // markers:true,
+    
 
   }
-  })
+  },[])
   .to(group.current.rotation,{
-    x:-0.2,
+    x:-0.5,
     y:-0.9,
     z:0,
   scrollTrigger:{
     trigger:'.second-section',
     start:"top bottom",
-    end:"top top",
+    end:" top top",
     scrub:true,
     immediateRender:false,
+    
+
   }
-  })
+  },[])
+
   .to(group.current.position,{
-    x:10,
-    y:-0.5,
-    z:-2,
+
+    z:-5,
   scrollTrigger:{
-    trigger:'.forth-section',
+    trigger:'.third-section',
     start:"top bottom",
     end:" top top",
     scrub:true,
     immediateRender:false,
-    // markers:true,
+    
 
   }
-  })
+  },[])
 
+  .to(discref.current.position,{
+    z: 6.447,
+  scrollTrigger:{
+    trigger:'.third-section',
+    start:"top bottom",
+    end:" top top",
+    scrub:true,
+    immediateRender:false,
+    // 
+
+  }
+  },[])
+  .to(roofref.current.position,{
+    y: 5,
+  scrollTrigger:{
+    trigger:'.third-section',
+    start:"top bottom",
+    end:" top top",
+    scrub:true,
+    immediateRender:false,
+    // 
+  }
+  },[])
+
+
+  .to(piperef.current.position,{
+    y: -5,
+  scrollTrigger:{
+    trigger:'.third-section',
+    start:"top bottom",
+    end:" top top",
+    scrub:true,
+    immediateRender:false,
+    // 
+  }
+  },[])
+
+  .to(redknobsref.current.position,{
+    y: 3.5,
+  scrollTrigger:{
+    trigger:'.third-section',
+    start:"top bottom",
+    end:" top top",
+    scrub:true,
+    immediateRender:false,
+    // 
+  }
+  },[])
   
+  .to(baseref.current.position,{
+    y: -2.8,
+  scrollTrigger:{
+    trigger:'.third-section',
+    start:"top bottom",
+    end:" top top",
+    scrub:true,
+    immediateRender:false,
+    // 
+
+  }
+  },[])
+  .to(baseref.current.position,{
+    y: -2.8,
+  scrollTrigger:{
+    trigger:'.third-section',
+    start:"top bottom",
+    end:" top top",
+    scrub:true,
+    immediateRender:false,
+    // 
+
+  }
+  },[])
+  .to(sideref.current.position,{
+    x: 4,
+  scrollTrigger:{
+    trigger:'.third-section',
+    start:"top bottom",
+    end:" top top",
+    scrub:true,
+    immediateRender:false,
+    // 
+
+  }
+  },[])
   
+  .to(sidecoverref2.current.position,{
+    x: 4,
+  scrollTrigger:{
+    trigger:'.third-section',
+    start:"top bottom",
+    end:" top top",
+    scrub:true,
+    immediateRender:false,
+    // 
+
+  }
+  },[])
   
-    
+  .to(drillref.current.position,{
+   z: 1,
+  scrollTrigger:{
+    trigger:'.third-section',
+    start:"top bottom",
+    end:" top top",
+    scrub:true,
+    immediateRender:false,
+    // 
+
+  }
+  },[])
   
-},[])
+})
   
   return (
     <group ref={group} {...props} dispose={null} position={[-1,-2.5,0]} rotation={[0.15,0.2,-0.03]}>
@@ -99,7 +216,7 @@ useLayoutEffect(()=>{
           <group name="root">
             <group name="GLTF_SceneRootNode" rotation={[0, 0, 0]}>
               <group name="Cylinder017_32">
-                <mesh name="Object_71" geometry={nodes.Object_71.geometry} material={materials['Material.009']} position={[2.96, 0.857, 0.629]} />
+                <mesh name="Object_71" ref={sideref} geometry={nodes.Object_71.geometry} material={materials['Material.009']} position={[2.96, 0.857, 0.629]} />
               </group>
               <group name="Cylinder018_33">
                 <mesh name="Object_73" geometry={nodes.Object_73.geometry} material={materials['Material.009']} position={[-3.225, 0.868, 0.569]} />
@@ -142,7 +259,7 @@ useLayoutEffect(()=>{
                 <mesh name="Object_48" geometry={nodes.Object_48.geometry} material={materials['Material.010']} position={[0.911, 0.685, 1.022]} />
               </group>
               <group name="Cylinder015_25">
-                <mesh name="Object_57" geometry={nodes.Object_57.geometry} material={materials['Material.005']} position={[1.98, 2.557, 0.323]} />
+                <mesh name="Object_57" ref={redknobsref} geometry={nodes.Object_57.geometry} material={materials['Material.005']} position={[1.98, 2.557, 0.323]} />
               </group>
               <group name="Cylinder016_26">
                 <mesh name="Object_59" geometry={nodes.Object_59.geometry} material={materials['Material.006']} position={[0.636, 1.586, 0.301]} />
@@ -156,7 +273,7 @@ useLayoutEffect(()=>{
                 <mesh name="Object_101" geometry={nodes.Object_101.geometry} material={materials['Material.026']} position={[-0.969, 2.628, -0.998]} />
                 <mesh name="Object_102" geometry={nodes.Object_102.geometry} material={materials['Material.025']} position={[-0.186, 2.611, -2.655]} />
                 <mesh name="Object_103" geometry={nodes.Object_103.geometry} material={materials['Material.024']} position={[-0.275, 2.28, 0.368]} />
-                <mesh name="Object_104" geometry={nodes.Object_104.geometry} material={materials['Material.023']} position={[-0.109, 2.864, 0.363]} />
+                <mesh ref={roofref} name="Object_104" geometry={nodes.Object_104.geometry} material={materials['Material.023']} position={[-0.109, 2.864, 0.363]} />
                 <mesh name="Object_105" geometry={nodes.Object_105.geometry} material={materials['Material.022']} position={[-0.19, 2.36, -0.443]} />
               </group>
               <group name="Cylinder022_42">
@@ -168,7 +285,7 @@ useLayoutEffect(()=>{
                 <mesh name="Object_67" geometry={nodes.Object_67.geometry} material={materials['Material.001']} position={[-0.145, 0.474, -2.755]} />
               </group>
               <group name="Galvos_dangtelis001_29">
-                <mesh name="Object_65" geometry={nodes.Object_65.geometry} material={materials['Material.001']} position={[2.171, 2.623, 0.324]} />
+                <mesh name="Object_65" ref={sidecoverref2} geometry={nodes.Object_65.geometry} material={materials['Material.001']} position={[2.171, 2.623, 0.324]} />
               </group>
               <group name="galvos_tangtelis001_28">
                 <mesh name="Object_63" geometry={nodes.Object_63.geometry} material={materials['Material.001']} position={[-2.455, 2.621, 0.276]} />
@@ -197,7 +314,7 @@ useLayoutEffect(()=>{
                 <mesh name="Object_95" geometry={nodes.Object_95.geometry} material={materials.material_0} position={[-0.78, 1.862, -2.294]} />
               </group>
               <group name="Skriejiko_dantratis001_34">
-                <mesh name="Object_75" geometry={nodes.Object_75.geometry} material={materials['Material.003']} position={[-0.133, 0.966, -0.333]} />
+                <mesh name="Object_75" ref={drillref} geometry={nodes.Object_75.geometry} material={materials['Material.003']} position={[-0.133, 0.966, -0.333]} />
                 <mesh name="Object_76" geometry={nodes.Object_76.geometry} material={materials['Material.002']} position={[-0.135, 0.969, 0.185]} />
               </group>
               <group name="spiruklytes001_24">
@@ -209,10 +326,10 @@ useLayoutEffect(()=>{
                 <mesh name="Object_8" geometry={nodes.Object_8.geometry} material={materials['Material.007']} position={[-2.581, 2.374, -1.451]} />
               </group>
               <group name="TEPALO_FILTRAS001_27">
-                <mesh name="Object_61" geometry={nodes.Object_61.geometry} material={materials['Material.014']} position={[-1.432, -2.198, 2.436]} />
+                <mesh name="Object_61" ref={piperef} geometry={nodes.Object_61.geometry} material={materials['Material.014']} position={[-1.432, -2.198, 2.436]} />
               </group>
               <group name="tepalo_filtro_sudukas002_37">
-                <mesh name="Object_86" geometry={nodes.Object_86.geometry} material={materials['Material.008']} position={[-0.196, -1.445, 0.863]} />
+                <mesh ref={baseref} name="Object_86" geometry={nodes.Object_86.geometry} material={materials['Material.008']} position={[-0.196, -1.445, 0.863]} />
               </group>
               <group name="UZ_SITO_VISOS_PLOKSTELES_VAZINES001_38">
                 <mesh name="Object_88" geometry={nodes.Object_88.geometry} material={materials['Material.016']} position={[-0.182, -0.905, 0.356]} />

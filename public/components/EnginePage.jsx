@@ -27,18 +27,6 @@ const canvasref=useRef()
 const cameraRef=useRef()
 const tl=gsap.timeline();
 
-// gsap.to(canvasref, {
-//   opacity: 0,
-//   ease: 'none',
-//   scrollTrigger: {
-//     trigger: '.forth-section',
-//     start: 'top top',
-//     end: 'bottom top',
-//     scrub: true
-//   }
-// });
-
-// console.log(canvasref.current.style)
 useLayoutEffect(()=>{
   tl
   .to(canvasref.current.style,{
@@ -54,6 +42,7 @@ useLayoutEffect(()=>{
 
   }
   },[])
+  
 })
 
   return (

@@ -18,7 +18,7 @@ export function Engine2({props,percentage,scrollY}) {
   const { nodes, materials, animations } = useGLTF('../models/engine2.glb')
   const { actions } = useAnimations(animations, group)
   const windowWidth = window.innerWidth;
-const [scale,setScale]=useState(0.7)
+const [scale,setScale]=useState(0.65)
 
 const { camera } = useThree();
 const tl=gsap.timeline();
@@ -210,7 +210,7 @@ useLayoutEffect(()=>{
   return (
     <group ref={group} {...props} dispose={null} position={[-1,-2.5,0]} rotation={[0.15,0.2,-0.03]}>
             <pointLight castShadow receiveShadow color={"grey"} intensity={1000} position={[6, 2, 3]} />
-
+          
       <group name="Scene">
         <group name="Sketchfab_model" scale={scale} rotation={[0, 0, 0]}>
           <group name="root">
@@ -222,6 +222,7 @@ useLayoutEffect(()=>{
                 <mesh name="Object_73" geometry={nodes.Object_73.geometry} material={materials['Material.009']} position={[-3.225, 0.868, 0.569]} />
               </group>
               <group name="Circle001_31">
+              
                 <mesh name="Object_69" ref={discref} geometry={nodes.Object_69.geometry} material={materials['Material.003']} position={[-0.149, -0.174, 3.447]} />
               </group>
               <group name="Cylinder003_0">
